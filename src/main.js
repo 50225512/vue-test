@@ -3,10 +3,11 @@ import Vue from 'Vue'
 import app from './App.vue'
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
-import { Header,Swipe, SwipeItem } from 'mint-ui'
+import { Header,Swipe, SwipeItem, Button } from 'mint-ui'
 Vue.component(Header.name, Header)
 Vue.component(Swipe.name, Swipe)
 Vue.component(SwipeItem.name, SwipeItem)
+Vue.component(Button.name, Button)
 
 //路由
 import VueRouter from 'vue-router'
@@ -16,6 +17,9 @@ import router from './router.js'
 //导入 vue-resource
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
+
+//配置请求根路径
+Vue.http.options.root = 'https://www.apiopen.top'
 
 
 var vm = new Vue({
