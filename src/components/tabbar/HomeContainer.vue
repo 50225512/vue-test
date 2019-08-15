@@ -1,7 +1,7 @@
 <template>
     <div>
         <!--轮播图-->
-        <mt-swipe :auto="4000">
+        <mt-swipe :auto="3000" :prevent="true">
             <mt-swipe-item v-for="item in lunbotuList" :key="item.url">
                 <img :src="item.url" alt="">
             </mt-swipe-item>
@@ -15,7 +15,7 @@
                     <img src="../../images/menu1.png" alt="">
                     <div class="mui-media-body">新闻资讯</div>
                 </router-link></li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="#">
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/photolist">
                     <img src="../../images/menu2.png" alt="">
                     <div class="mui-media-body">图片分享</div></router-link></li>
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="#">
@@ -49,7 +49,7 @@ export default{
     },
     methods:{
         getLunbotu(){
-            this.$http.get('meituApi?page=2').then(result=>{
+            this.$http.get('meituApi?page=3').then(result=>{
                 
                 if(result.body.code ===200){
                     // result.body.data.slice(0,4).forEach((item,index) => {
@@ -74,19 +74,19 @@ export default{
     height: 200px;
 
     .mint-swipe-item{
-        &:nth-child(1){
+        // &:nth-child(1){
 
-        }
-        &:nth-child(2){
+        // }
+        // &:nth-child(2){
 
-        }
-        &:nth-child(3){
+        // }
+        // &:nth-child(3){
             
-        }
+        // }
 
         img{
             width:100%;
-            height: 100%;
+            height:100%;
         }
     }
 }

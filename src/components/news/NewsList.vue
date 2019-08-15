@@ -44,8 +44,8 @@ export default {
       this.$http.get("journalismApi").then(result => {
         if (result.body.code === 200) {
             //如果没有失败，应该把数据保存到data上
-            // console.log(result.body.data.tech)
-            this.newslist = result.body.data.tech;
+            console.log(result.body.data.tech[0].picInfo[0].url)
+            this.newslist = result.body.data.auto;
         } else {
             Toast('获取新闻列表失败！')
         }
